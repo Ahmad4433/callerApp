@@ -7,7 +7,9 @@ android {
         applicationId "com.hafizbrothers.caller"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        // Bumped by CI via -PbuildVersionCode so the in-app update checker can tell
+        // a new build apart from the one currently installed. Defaults to 1 locally.
+        versionCode (project.hasProperty('buildVersionCode') ? project.buildVersionCode.toInteger() : 1)
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
@@ -16,7 +18,21 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        // A fixed, repo-committed debug keystore (generated once by CI) so every
+        // build carries the same signature — without this, Android treats each
+        // new APK as a different app and refuses to install over the old one.
+        debug {
+            storeFile file('debug-shared.keystore')
+            storePassword 'hbcallershared'
+            keyAlias 'hbcallerdebug'
+            keyPassword 'hbcallershared'
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
