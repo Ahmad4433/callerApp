@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "243104926656",
+    "project_id": "hb-height",
+    "storage_bucket": "hb-height.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243104926656:android:f8d100b288e502d47d1625",
+        "android_client_info": {
+          "package_name": "com.hafizbrothers.caller"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMe5PGtSTAYrE_UB3JdwU9nW6TOZW4KVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
