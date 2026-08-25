@@ -41,6 +41,7 @@ jobs:
         working-directory: android
         run: |
           set +e
+          chmod +x gradlew
           ./gradlew assembleDebug --no-daemon > ../gradle.log 2>&1
           code=$?
           cat ../gradle.log
