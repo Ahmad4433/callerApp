@@ -1,0 +1,13 @@
+{
+  "appId": "com.hafizbrothers.caller",
+  "appName": "HB Caller",
+  "webDir": "www",
+  "server": {
+    "url": "https://erp.hafizbrothersestate.com/caller",
+    "androidScheme": "https",
+    "cleartext": false
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HB Caller</string>
+    <string name="title_activity_main">HB Caller</string>
+    <string name="package_name">com.hafizbrothers.caller</string>
+    <string name="custom_url_scheme">com.hafizbrothers.caller</string>
+</resources>
